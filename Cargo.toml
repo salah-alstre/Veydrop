@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = ["crates/veydrop-core", "desktop/src-tauri"]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+authors = ["Veydrop"]
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+opt-level = 3
+panic = "abort"
+strip = true

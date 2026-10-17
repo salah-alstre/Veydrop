@@ -1,0 +1,40 @@
+[package]
+name = "veydrop-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Veydrop transfer engine: local server, pairing, transfers, history, settings"
+
+[dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "fs", "io-util", "net", "sync", "time", "process"] }
+tokio-util = "0.7"
+tokio-stream = { version = "0.1", features = ["sync"] }
+futures-util = "0.3"
+async-stream = "0.3"
+axum = "0.8"
+bytes = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+rand = "0.9"
+base64 = "0.22"
+sha2 = "0.10"
+hex = "0.4"
+crc32fast = "1"
+if-addrs = "0.13"
+parking_lot = "0.12"
+percent-encoding = "2"
+mime_guess = "2"
+walkdir = "2"
+dirs = "6"
+qrcode = { version = "0.14", default-features = false }
+tracing = "0.1"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_NetworkManagement_IpHelper", "Win32_Foundation", "Win32_System_IO", "Win32_Storage_FileSystem"] }
+
+[dev-dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream"] }
+tempfile = "3"
+tokio = { version = "1", features = ["full"] }
+zip = { version = "2", default-features = false }

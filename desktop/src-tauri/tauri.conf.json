@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Veydrop",
+  "version": "1.0.0",
+  "identifier": "app.veydrop.desktop",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build:all"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Veydrop",
+        "width": 1120,
+        "height": 740,
+        "minWidth": 920,
+        "minHeight": 620,
+        "center": true,
+        "visible": false,
+        "backgroundColor": "#050505",
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"],
+    "resources": { "resources/mobile": "mobile" },
+    "publisher": "Veydrop",
+    "copyright": "Copyright (c) 2026 Veydrop",
+    "category": "Utility",
+    "shortDescription": "Local file transfer between PC and phone",
+    "longDescription": "Veydrop sends files between a Windows PC and an iPhone or Android phone over the local network. The phone only needs a browser.",
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": true,
+        "languages": ["English", "Arabic"],
+        "installerIcon": "icons/icon.ico",
+        "compression": "lzma"
+      },
+      "webviewInstallMode": { "type": "downloadBootstrapper" }
+    }
+  }
+}

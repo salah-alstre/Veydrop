@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter/wght.css";
+@import "@fontsource/ibm-plex-sans-arabic/arabic-400.css";
+@import "@fontsource/ibm-plex-sans-arabic/arabic-500.css";
+@import "@fontsource/ibm-plex-sans-arabic/arabic-600.css";
+@import "@fontsource/ibm-plex-sans-arabic/latin-400.css";
+@import "@fontsource/ibm-plex-sans-arabic/latin-500.css";
+@import "@fontsource/ibm-plex-sans-arabic/latin-600.css";
+@import "../../shared/tokens.css";
+
+@theme inline {
+  --color-bg: var(--vd-bg);
+  --color-surface: var(--vd-surface);
+  --color-surface-2: var(--vd-surface-2);
+  --color-surface-3: var(--vd-surface-3);
+  --color-line: var(--vd-border);
+  --color-line-strong: var(--vd-border-strong);
+  --color-fg: var(--vd-fg);
+  --color-muted: var(--vd-muted);
+  --color-faint: var(--vd-faint);
+  --color-accent: var(--vd-accent);
+  --color-accent-2: var(--vd-accent-2);
+  --color-accent-ink: var(--vd-accent-ink);
+  --color-accent-soft: var(--vd-accent-soft);
+  --color-success: var(--vd-success);
+  --color-warn: var(--vd-warn);
+  --color-danger: var(--vd-danger);
+  --color-danger-soft: var(--vd-danger-soft);
+  --font-sans: "Inter Variable", "IBM Plex Sans Arabic", system-ui, "Segoe UI", sans-serif;
+  --radius-card: var(--vd-radius-lg);
+}
+
+html[lang="ar"] { --font-sans: "IBM Plex Sans Arabic", "Inter Variable", system-ui, "Segoe UI", sans-serif; }
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--vd-bg);
+  color: var(--vd-fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  user-select: none;
+}
+input, textarea, .selectable { user-select: text; }
+:focus-visible { outline: 2px solid var(--vd-accent); outline-offset: 2px; border-radius: 6px; }
+button { font: inherit; }
+
+/* Numbers and technical strings stay left-to-right inside RTL text. */
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+.num { font-variant-numeric: tabular-nums; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--vd-surface-3); border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--vd-border-strong); background-clip: content-box; border: 2px solid transparent; }
+
+/* ---- Veydrop symbol: data dots travel from the screen to the phone ---- */
+@keyframes vd-dot {
+  0%, 100% { opacity: .15; transform: translate(0, 0); }
+  50% { opacity: 1; }
+  70% { transform: translate(10px, -8px); }
+}
+.vd-dot { animation: vd-dot 1.8s var(--vd-ease) infinite; }
+.vd-dot:nth-child(2) { animation-delay: .25s; }
+.vd-dot:nth-child(3) { animation-delay: .5s; }
+
+/* ---- Connecting loader: two nodes with packets flowing between them ---- */
+@keyframes vd-flow {
+  0% { transform: translateX(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateX(var(--vd-flow-dist, 120px)); opacity: 0; }
+}
+.vd-packet { animation: vd-flow 1.6s linear infinite; }
+[dir="rtl"] .vd-packet { animation-name: vd-flow-rtl; }
+@keyframes vd-flow-rtl {
+  0% { transform: translateX(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateX(calc(var(--vd-flow-dist, 120px) * -1)); opacity: 0; }
+}
+@keyframes vd-pulse-ring {
+  0% { transform: scale(.9); opacity: .6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.vd-ring { animation: vd-pulse-ring 2.2s ease-out infinite; transform-origin: center; }
+@keyframes vd-shimmer { 100% { transform: translateX(100%); } }
+.vd-skeleton { position: relative; overflow: hidden; background: var(--vd-surface-2); border-radius: 8px; }
+.vd-skeleton::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / .05), transparent);
+  transform: translateX(-100%); animation: vd-shimmer 1.4s infinite;
+}
+:root[data-theme="light"] .vd-skeleton::after { background: linear-gradient(90deg, transparent, rgb(0 0 0 / .05), transparent); }
+[dir="rtl"] .vd-skeleton::after { animation-direction: reverse; }
+@keyframes vd-spin { to { transform: rotate(360deg); } }
+.vd-spin { animation: vd-spin .9s linear infinite; }
+
+/* Icons that point in a direction mirror in RTL. */
+[dir="rtl"] .flip-rtl { transform: scaleX(-1); }
+
+.vd-card {
+  background: var(--vd-surface);
+  border: 1px solid var(--vd-border);
+  border-radius: var(--vd-radius-lg);
+  box-shadow: var(--vd-shadow);
+}
+.vd-grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, var(--vd-border) 1px, transparent 0);
+  background-size: 22px 22px;
+}

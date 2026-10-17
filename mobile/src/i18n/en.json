@@ -1,0 +1,171 @@
+{
+  "app": {
+    "name": "Veydrop",
+    "tagline": "From screen to screen"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "retry": "Retry",
+    "close": "Close",
+    "back": "Back",
+    "pause": "Pause",
+    "resume": "Resume",
+    "remove": "Remove",
+    "clear": "Clear"
+  },
+  "link": {
+    "online": "Connected",
+    "connecting": "Connecting…",
+    "reconnecting": "Reconnecting…",
+    "lost": "Connection to the PC was lost. Retrying. Transfers continue where they stopped."
+  },
+  "pair": {
+    "checking": "Connecting to your PC…",
+    "needToken": {
+      "title": "Scan the QR code on your PC",
+      "body": "Open Veydrop on your PC, go to Connect Device, then scan the QR code with this phone's camera.",
+      "hint": "Both devices must be on the same Wi-Fi network."
+    },
+    "waiting": {
+      "title": "Approve this phone on your PC",
+      "body": "{{pc}} is asking you to confirm. Check that it shows this code, then approve.",
+      "code": "Pairing code"
+    },
+    "tryAgain": "Try again",
+    "failed": {
+      "rejected": {
+        "title": "Request declined",
+        "body": "The PC declined this phone. Scan a new QR code to try again."
+      },
+      "expired": {
+        "title": "Request timed out",
+        "body": "Nobody approved this phone in time. Scan a new QR code to try again."
+      },
+      "pairing_expired": {
+        "title": "QR code expired",
+        "body": "This code is no longer valid. Generate a new QR code on your PC and scan it."
+      },
+      "pairing_used": {
+        "title": "QR code already used",
+        "body": "Each QR code works once. Generate a new QR code on your PC and scan it."
+      },
+      "network": {
+        "title": "Can't reach your PC",
+        "body": "Make sure this phone is on the same Wi-Fi as the PC, and that Veydrop is still running."
+      },
+      "other": {
+        "title": "Couldn't connect",
+        "body": "Something went wrong while pairing. Generate a new QR code on your PC and scan it."
+      }
+    }
+  },
+  "home": {
+    "connectedTo": "Connected to {{pc}}",
+    "send": {
+      "title": "Send to PC",
+      "desc": "Choose photos, videos or files on this phone."
+    },
+    "receive": {
+      "title": "Receive from PC",
+      "desc": "Download the files your PC is sharing."
+    },
+    "sharedCount": "Shared files: {{n}}",
+    "disconnect": "Disconnect",
+    "disconnectAsk": "Disconnect from {{pc}}?",
+    "disconnectConfirm": "Disconnect"
+  },
+  "send": {
+    "title": "Send to PC",
+    "intro": "Pick what to send. Your PC will ask you to accept it before anything is saved.",
+    "pickFiles": "Choose files",
+    "pickFolder": "Choose a folder",
+    "addMore": "Add more",
+    "empty": "No files selected yet.",
+    "selected": "Selected: {{n}}",
+    "total": "Total size: {{size}}",
+    "start": "Send to PC",
+    "waiting": "Waiting for your PC to accept…",
+    "rejected": "Your PC declined these files.",
+    "offerFailed": "Your PC could not accept these files.",
+    "tooMany": "Too many files at once. Send up to {{n}} at a time.",
+    "keepOpen": "Keep this page open while sending. If the screen locks, the transfer pauses and continues when you come back.",
+    "progress": "Sent {{done}} of {{total}}",
+    "allDone": "All files sent and verified",
+    "someFailed": "Some files did not transfer",
+    "sendMore": "Send more",
+    "cancelAll": "Cancel all",
+    "eta": "{{eta}} left",
+    "state": {
+      "queued": "Waiting",
+      "uploading": "Sending",
+      "paused": "Paused",
+      "pcPaused": "Paused on the PC",
+      "interrupted": "Interrupted",
+      "finalizing": "Verifying",
+      "done": "Sent and verified",
+      "failed": "Failed",
+      "cancelled": "Cancelled"
+    }
+  },
+  "receive": {
+    "title": "Receive from PC",
+    "empty": {
+      "title": "Nothing shared yet",
+      "body": "On your PC, open Send Files, choose files or folders and start sharing. They will appear here."
+    },
+    "files": "Files · {{n}}",
+    "total": "Total size: {{size}}",
+    "download": "Download",
+    "zipAll": "Download all as ZIP",
+    "zipSelected": "Download selected as ZIP",
+    "selectAll": "Select all",
+    "selectNone": "Select none",
+    "selected": "Selected: {{n}}",
+    "missing": "No longer available on the PC",
+    "preparing": "Preparing…",
+    "noteTitle": "About downloads",
+    "noteIos": "On iPhone, Safari saves downloads to the Files app. Tap the download icon in the address bar to open them.",
+    "noteAndroid": "On Android, your browser saves downloads to its download folder. Check the notification or the Files app.",
+    "noteGeneric": "Your browser decides where downloads are saved. Veydrop cannot choose that location.",
+    "sharingStopped": "The PC stopped sharing."
+  },
+  "ended": {
+    "title": "Connection ended",
+    "body": "This phone is no longer connected to the PC. Scan a new QR code to connect again."
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "languageFollows": "Follows the language chosen in Veydrop on your PC.",
+    "theme": "Theme",
+    "themeSystem": "Automatic",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "notice": "This connection is plain HTTP on your local network, so it is not encrypted. Use it only on a Wi-Fi network you trust."
+  },
+  "errors": {
+    "io": "A file operation failed on the PC. Check that its disk is available and try again.",
+    "permission_denied": "The PC was not allowed to save to that location.",
+    "path_not_found": "That file or folder no longer exists.",
+    "port_in_use": "The PC's port is in use by another program.",
+    "invalid": "That request was not valid.",
+    "not_found": "That item could not be found. It may have been removed.",
+    "conflict": "That action conflicts with the current state. Try again.",
+    "unauthorized": "This phone is no longer connected. Scan the QR code again.",
+    "forbidden": "That action is not allowed.",
+    "rate_limited": "Too many attempts. Wait a moment and try again.",
+    "pairing_expired": "The pairing code expired. Generate a new QR code on your PC.",
+    "pairing_used": "That pairing code was already used. Generate a new QR code on your PC.",
+    "server_not_running": "The PC is not sharing right now.",
+    "no_network": "The PC has no usable network connection.",
+    "insufficient_space": "The PC does not have enough free disk space for this transfer.",
+    "too_large": "That file is larger than the limit set on the PC.",
+    "hash_mismatch": "The file arrived damaged: its checksum did not match, so the PC discarded it.",
+    "cancelled": "The transfer was cancelled.",
+    "offset_mismatch": "The transfer lost sync and could not continue.",
+    "zip_too_large": "That selection is too large for a single ZIP. Download files individually.",
+    "network": "Can't reach the PC. Check that both devices are on the same Wi-Fi.",
+    "file_changed": "This file changed while it was being sent. Select it again.",
+    "other": "Something went wrong."
+  }
+}
